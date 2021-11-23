@@ -13,8 +13,8 @@ def convert_CtoL():
       crypto = crypto.replace(word, read)
       print(crypto)
     
-    Fcrypto = crypto
-    lbl3_C["text"] = Fcrypto
+    Fcrypto = "　"+crypto
+    lbl3_C.insert('1.0',Fcrypto)
     print(Fcrypto)
 
 # CSV読み込み処理
@@ -35,7 +35,7 @@ Fcrypto = ""
 lbl_C = tk.Label(win, text="AnGO", fg="Green", bg="black", font=font1, height=2)
 lbl_C.pack(side="top")
 
-lbl2_C = tk.Label(win, text="言語 ➡ 暗号", bg="black",fg="Green")
+lbl2_C = tk.Label(win, text="暗号 ➡ 言語", bg="black",fg="Green")
 lbl2_C.pack()
 
 input_C = tk.Entry(win, bg="#000", fg="Green", font=font3)
@@ -44,10 +44,10 @@ input_C.pack()
 enterButton_C = tk.Button(win, text=' OK ', command=convert_CtoL ,bg="black" ,fg="Green")
 enterButton_C.pack()
 
-resultTitle_C = tk.Label(win, text="---------------------------- Result ----------------------------", fg="Green",bg="black", font=font2, height=5)
+resultTitle_C = tk.Label(win, text="---------------------------- Result ----------------------------", fg="Green",bg="black", font=font2, height=2)
 resultTitle_C.pack(side="top")
 
-lbl3_C = tk.Label(win, text="---", fg="Green", bg="black")
+lbl3_C = tk.Text(win, width=40, height=4, bg="#000", fg="Green")
 lbl3_C.pack()
 
 win.mainloop()

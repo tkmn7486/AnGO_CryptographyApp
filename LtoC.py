@@ -39,8 +39,8 @@ def convert_LtoC():
       crypto = crypto.replace(word, read)
       print(crypto)
     
-    Fcrypto = crypto
-    lbl3_L["text"] = Fcrypto
+    Fcrypto = "　"+crypto
+    lbl3_L.insert('1.0',Fcrypto)
     print(Fcrypto)
 
 def convert_CtoL():
@@ -92,7 +92,7 @@ enterButton_L.pack()
 resultTitle_L = tk.Label(win, text="---------------------------- Result ----------------------------", fg="Green",bg="black", font=font2, height=5)
 resultTitle_L.pack(side="top")
 
-lbl3_L = tk.Label(win, text="---", fg="Green", bg="black")
+lbl3_L = tk.Text(win, width=40, height=4, bg="#000", fg="Green")
 lbl3_L.pack()
 
 win.mainloop()
