@@ -12,6 +12,14 @@ def convert_CtoL():
     for word, read in CtoL_first.items():
       crypto = crypto.replace(word, read)
       print(crypto)
+
+    for word2, read2 in CtoL_second.items():
+      crypto = crypto.replace(word2, read2)
+      print(crypto)
+
+    for word3, read3 in CtoL_third.items():
+      crypto = crypto.replace(word3, read3)
+      print(crypto)
     
     Fcrypto = "　"+crypto
     lbl3_C.insert('1.0',Fcrypto)
@@ -21,6 +29,14 @@ def convert_CtoL():
 with open('CtoL_first.csv', mode='r') as inp:
     reader = csv.reader(inp)
     CtoL_first = {rows[0]:rows[1] for rows in reader}
+
+with open('CtoL_second.csv', mode='r') as inp:
+    reader = csv.reader(inp)
+    CtoL_second = {rows[0]:rows[1] for rows in reader}
+
+with open('CtoL_third.csv', mode='r') as inp:
+    reader = csv.reader(inp)
+    CtoL_third = {rows[0]:rows[1] for rows in reader}
 
 # フォント設定
 font1 = font.Font(family='Helvetica', size=20, weight='bold')
