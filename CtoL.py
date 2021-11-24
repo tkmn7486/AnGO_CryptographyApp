@@ -4,7 +4,7 @@ from tkinter import font
 
 win = tk.Tk()
 win.title("AnGO -C to L -")
-win.geometry("400x300")
+win.geometry("450x350")
 win.configure(bg="black")
 
 def convert_CtoL():
@@ -24,6 +24,11 @@ def convert_CtoL():
     Fcrypto = "　"+crypto
     lbl3_C.insert('1.0',Fcrypto)
     print(Fcrypto)
+
+def copyText():
+  win.clipboard_clear()
+  copy = lbl3_C.get('1.0','end')
+  win.clipboard_append(copy)
 
 # CSV読み込み処理
 with open('CtoL_first.csv', mode='r') as inp:
@@ -65,5 +70,9 @@ resultTitle_C.pack(side="top")
 
 lbl3_C = tk.Text(win, width=40, height=4, bg="#000", fg="Green")
 lbl3_C.pack()
+
+copy_Button = tk.Button(text=" copy ", command=copyText, bg="black" ,fg="Green")
+copy_Button.pack()
+
 
 win.mainloop()

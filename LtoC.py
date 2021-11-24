@@ -1,10 +1,11 @@
 import tkinter as tk
 import csv
 from tkinter import font
+from tkinter import messagebox
 
 win = tk.Tk()
 win.title("AnGO -L to C -")
-win.geometry("400x300")
+win.geometry("450x350")
 win.configure(bg="black")
 
 # def changeApp_CtoL():
@@ -50,6 +51,12 @@ def convert_LtoC():
     Fcrypto = "　"+crypto
     lbl3_L.insert('1.0',Fcrypto)
     print(Fcrypto)
+    messagebox.showinfo('complete', 'crypted is done')
+
+def copyText():
+  win.clipboard_clear()
+  copy = lbl3_L.get('1.0','end')
+  win.clipboard_append(copy)
 
 # def convert_CtoL():
 #     crypto = input_C.get()
@@ -118,5 +125,8 @@ resultTitle_L.pack(side="top")
 
 lbl3_L = tk.Text(win, width=40, height=4, bg="#000", fg="Green")
 lbl3_L.pack()
+
+copy_Button = tk.Button(text=" copy ", command=copyText, bg="black" ,fg="Green")
+copy_Button.pack()
 
 win.mainloop()
